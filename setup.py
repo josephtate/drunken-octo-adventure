@@ -5,4 +5,5 @@ try:
 except OSError, e:
     print str(e)
 
-os.system('touch build/drunken-octo-adventure-999.egg')
+buildnum  = os.environ.get('BUILD_NUM', 9)
+os.system('touch build/drunken-octo-adventure-999-%00d.egg' % buildnum)
